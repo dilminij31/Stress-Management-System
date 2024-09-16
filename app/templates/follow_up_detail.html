@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Follow-Up Detail</title>
+</head>
+<body>
+    <h2>Follow-Up Details</h2>
+    <p><strong>Employee Number:</strong> {{ follow_up.employee_number }}</p>
+    <p><strong>Follow-Up Date:</strong> {{ follow_up.follow_up_date }}</p>
+    <p><strong>Status:</strong> {{ follow_up.follow_up_status }}</p>
+    <p><strong>Notes:</strong> {{ follow_up.notes }}</p>
+
+    <form action="{{ url_for('counselor.add_notes', follow_up_id=follow_up.id) }}" method="POST">
+        <label for="notes">Add Notes:</label><br>
+        <textarea name="notes" id="notes" rows="5" cols="50">{{ follow_up.notes }}</textarea><br>
+        <button type="submit">Add Notes</button>
+    </form>
+
+    <a href="{{ url_for('counselor.counselor_dashboard') }}">Back to Dashboard</a>
+</body>
+</html>

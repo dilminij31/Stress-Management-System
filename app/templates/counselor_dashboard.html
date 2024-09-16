@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counselor Dashboard</title>
+</head>
+<body>
+    <h2>Counselor Dashboard</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Employee Number</th>
+                <th>Follow-Up Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for follow_up in follow_ups %}
+            <tr>
+                <td>{{ follow_up.employee_number }}</td>
+                <td>{{ follow_up.follow_up_date }}</td>
+                <td>{{ follow_up.follow_up_status }}</td>
+                <td>
+                    <a href="{{ url_for('counselor.follow_up_detail', follow_up_id=follow_up.id) }}">View Details</a>
+                    {% if follow_up.follow_up_status != 'Completed' %}
+                        <form action="{{ url_for('counselor.complete_follow_up', follow_up_id=follow_up.id) }}" method="POST" style="display:inline;">
+                            <button type="submit">Mark as Completed</button>
+                        </form>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

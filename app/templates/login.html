@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management - Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Stress Management App</h1>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="/login" style="margin-top: 20px;">
+            <h4>Login</h4>
+
+            <!-- Role Selection -->
+            <div class="form-group">
+                <label for="role">Select Role:</label>
+                <select class="form-control" id="role" name="role" required>
+                    <option value="employee">Employee</option>
+                    <option value="hr">HR</option>
+                    <option value="counselor">Counselor</option>
+                </select>
+            </div>
+
+            <!-- Employee Number Input -->
+            <div class="form-group">
+                <label for="employee_number">Employee Number:</label>
+                <input type="text" class="form-control" id="employee_number" name="employee_number" required>
+            </div>
+
+            <!-- Password Input (for HR and Counselors only) -->
+            <div class="form-group">
+                <label for="password">Password (HR and Counselors Only):</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-success">Login</button>
+           
+            <!-- Registration Link -->
+            <div class="form-group" style="margin-top: 20px;"> 
+                <label for="register">Are you new?</label>
+                <a href="/register" class="btn btn-primary">Register</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

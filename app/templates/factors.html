@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Management Survey</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Stress Management Survey</h1>
+        <p>Based on your opinion, please select and tick ONLY ONE number that reflects your most appropriate response. 
+        <br>ඔබේ මතය මත පදනම්ව කරුණාකර ඔබේ වඩාත් සුදුසු ප්‍රතිචාරය පෙන්වන එක් අංකයක් පමණක් තෝරා ලකුණු කරන්න.</p>
+
+        <form method="POST" action="/submit_survey">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Question No<br>ප්‍රශ්න අංක</th>
+                        <th>Statement<br>ප්‍රකාශය</th>
+                        <th>Never<br>කවදාවත් නැහැ (1)</th>
+                        <th>Rarely<br>කලාතුරකින් (2)</th>
+                        <th>Sometimes<br>සමහර විට (3)</th>
+                        <th>Often<br>බොහෝ විට (4)</th>
+                        <th>Always<br>සැමවිටම (5)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Job Stress Section -->
+                    <tr>
+                        <td colspan="7"><strong>Job Stress<br>රැකියා ආතතිය</strong></td>
+                    </tr>
+                    <tr>
+                        <td>01</td>
+                        <td>I feel like my work is overloaded.<br>මගේ ආයතනික වැඩ ප්‍රමාණය වැඩි වී ඇතැයි මට දැනේ.</td>
+                        <td><input type="radio" name="q1" value="1"></td>
+                        <td><input type="radio" name="q1" value="2"></td>
+                        <td><input type="radio" name="q1" value="3"></td>
+                        <td><input type="radio" name="q1" value="4"></td>
+                        <td><input type="radio" name="q1" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>I always get pressured with my work.<br>මගේ වැඩ කටයුතු සමඟ මම නිතරම පීඩනයට පත් වෙනවා.</td>
+                        <td><input type="radio" name="q2" value="1"></td>
+                        <td><input type="radio" name="q2" value="2"></td>
+                        <td><input type="radio" name="q2" value="3"></td>
+                        <td><input type="radio" name="q2" value="4"></td>
+                        <td><input type="radio" name="q2" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>I feel like there are some struggles between people within the workplace.<br>රැකියා ස්ථානය තුළ මිනිසුන් අතර යම් යම් ගැටුම් ඇති බව මට හැඟේ.</td>
+                        <td><input type="radio" name="q3" value="1"></td>
+                        <td><input type="radio" name="q3" value="2"></td>
+                        <td><input type="radio" name="q3" value="3"></td>
+                        <td><input type="radio" name="q3" value="4"></td>
+                        <td><input type="radio" name="q3" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>04</td>
+                        <td>I feel like there is a lack of safety within my working condition.<br>මගේ රැකියා තත්වය තුළ සුරක්ෂිත බව අඩු බවක් මට හැඟේ.</td>
+                        <td><input type="radio" name="q4" value="1"></td>
+                        <td><input type="radio" name="q4" value="2"></td>
+                        <td><input type="radio" name="q4" value="3"></td>
+                        <td><input type="radio" name="q4" value="4"></td>
+                        <td><input type="radio" name="q4" value="5"></td>
+                    </tr>
+
+                    <!-- Organizational Factors Section -->
+                    <tr>
+                        <td colspan="7"><strong>Organizational Factors<br>ආයතනික සාධක</strong></td>
+                    </tr>
+                    <tr>
+                        <td>05</td>
+                        <td>I feel like there are unfavorable working conditions at the workplace.<br>රැකියා ස්ථානයේ අසතුටුදායක සේවා තත්ත්වයන් පවතින බව මට හැඟේ.</td>
+                        <td><input type="radio" name="q5" value="1"></td>
+                        <td><input type="radio" name="q5" value="2"></td>
+                        <td><input type="radio" name="q5" value="3"></td>
+                        <td><input type="radio" name="q5" value="4"></td>
+                        <td><input type="radio" name="q5" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>06</td>
+                        <td>I feel like there are unpleasant coworkers when I work at my workplace.<br>මම මගේ සේවා ස්ථානයේ වැඩ කරන විට මා අකමැති සහයකයින් සිටින බව මට හැඟේ.</td>
+                        <td><input type="radio" name="q6" value="1"></td>
+                        <td><input type="radio" name="q6" value="2"></td>
+                        <td><input type="radio" name="q6" value="3"></td>
+                        <td><input type="radio" name="q6" value="4"></td>
+                        <td><input type="radio" name="q6" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>07</td>
+                        <td>I feel like it is difficult to complete tasks within a limited time.<br>සීමිත කාලයක් තුළ වැඩ නිම කිරීම අපහසු බව මට හැඟේ.</td>
+                        <td><input type="radio" name="q7" value="1"></td>
+                        <td><input type="radio" name="q7" value="2"></td>
+                        <td><input type="radio" name="q7" value="3"></td>
+                        <td><input type="radio" name="q7" value="4"></td>
+                        <td><input type="radio" name="q7" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>08</td>
+                        <td>I feel like there are unfavorable administrative policies and strategies at my workplace.<br>මගේ සේවා ස්ථානයේ අසතුටුදායක පරිපාලන ප්‍රතිපත්ති සහ උපාය මාර්ග ඇති බව මට හැඟේ.</td>
+                        <td><input type="radio" name="q8" value="1"></td>
+                        <td><input type="radio" name="q8" value="2"></td>
+                        <td><input type="radio" name="q8" value="3"></td>
+                        <td><input type="radio" name="q8" value="4"></td>
+                        <td><input type="radio" name="q8" value="5"></td>
+                    </tr>
+
+                    <!-- Personality Factors Section -->
+                    <tr>
+                        <td colspan="7"><strong>Personality Factors<br>පුද්ගලික සාධක</strong></td>
+                    </tr>
+                    <tr>
+                        <td>09</td>
+                        <td>I feel like I am having some issues with my career.<br>මට මගේ වෘත්තිය සම්බන්ධව යම් යම් ගැටලු තිබෙන බව  හැඟේ.</td>
+                        <td><input type="radio" name="q9" value="1"></td>
+                        <td><input type="radio" name="q9" value="2"></td>
+                        <td><input type="radio" name="q9" value="3"></td>
+                        <td><input type="radio" name="q9" value="4"></td>
+                        <td><input type="radio" name="q9" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>I feel like I am having some issues regarding changing my working environment.<br>මගේ රැකියා පරිසරය මාරුවීම සම්බන්ධව ගැටළු පවතින බව හැගේ.</td>
+                        <td><input type="radio" name="q10" value="1"></td>
+                        <td><input type="radio" name="q10" value="2"></td>
+                        <td><input type="radio" name="q10" value="3"></td>
+                        <td><input type="radio" name="q10" value="4"></td>
+                        <td><input type="radio" name="q10" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>I feel like, I am having some Relationship problems.<br>මට ප්‍රේම සම්බන්ධතා පිලිබඳ ගැටළු තිබෙන බව හැඟේ.</td>
+                        <td><input type="radio" name="q11" value="1"></td>
+                        <td><input type="radio" name="q11" value="2"></td>
+                        <td><input type="radio" name="q11" value="3"></td>
+                        <td><input type="radio" name="q11" value="4"></td>
+                        <td><input type="radio" name="q11" value="5"></td>
+                    </tr>
+                    <tr>
+                        <td>12</td>
+                        <td>I feel like, I am having some family problems in my family.<br>මට මගේ පවුල තුල ගැටළු පවතින බව හැගේ.</td>
+                        <td><input type="radio" name="q12" value="1"></td>
+                        <td><input type="radio" name="q12" value="2"></td>
+                        <td><input type="radio" name="q12" value="3"></td>
+                        <td><input type="radio" name="q12" value="4"></td>
+                        <td><input type="radio" name="q12" value="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

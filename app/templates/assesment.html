@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stress Assessment</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .question {
+            text-align: left;
+        }
+        h2 {
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Stress Level Assessment-ආතතිය ඇගයීම</h2>
+        <form method="POST" action="/submit_phq9">
+            <p>Over the last 2 weeks, how often have you been bothered by the following problems?<br>පසුගිය සති දෙක තුළ පහත සඳහන් ගැටලු නිසා ඔබ කොපමණ වාරයක් වද වී ඇත්ද?</p>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Question<br>ප්‍රශ්න අංක</th>
+                        <th>Not at all<br>කොහෙත්ම නැහැ<br> (0)</th>
+                        <th>Several days<br>දින කිහිපයක්<br> (1)</th>
+                        <th>More than half the days<br>දින භාගයකට වඩා<br> (2)</th>
+                        <th>Nearly every day<br>සෑම දිනකම<br> (3)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="question">1. Little interest or pleasure in doing things<br>දේවල් කිරීමේදී සුළු උනන්දුවක් හෝ ප්‍රීතියක් නොමැති වීම.</td>
+                        <td><input type="radio" name="q1" value="0" required></td>
+                        <td><input type="radio" name="q1" value="1"></td>
+                        <td><input type="radio" name="q1" value="2"></td>
+                        <td><input type="radio" name="q1" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">2. Feeling down, depressed or hopeless<br>මානසික අවපීඩනය හෝ බලාපොරොත්තු සුන්වීම</td>
+                        <td><input type="radio" name="q2" value="0" required></td>
+                        <td><input type="radio" name="q2" value="1"></td>
+                        <td><input type="radio" name="q2" value="2"></td>
+                        <td><input type="radio" name="q2" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">3. Trouble falling asleep, staying asleep, or sleeping too much<br>නිදියනට අපහසුකම්, නිදාගෙන ඉන්නට අමාරුකම්, හෝ වැඩිපුර නිදා ගැනීම</td>
+                        <td><input type="radio" name="q3" value="0" required></td>
+                        <td><input type="radio" name="q3" value="1"></td>
+                        <td><input type="radio" name="q3" value="2"></td>
+                        <td><input type="radio" name="q3" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">4. Feeling tired or having little energy<br>අලස හෝ ශක්තිය අඩුවීමක් හැඟීම</td>
+                        <td><input type="radio" name="q4" value="0" required></td>
+                        <td><input type="radio" name="q4" value="1"></td>
+                        <td><input type="radio" name="q4" value="2"></td>
+                        <td><input type="radio" name="q4" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">5. Poor appetite or overeating<br>දුර්වල ආහාර රුචිය හෝ අධික ලෙස ආහාර ගැනීම</td>
+                        <td><input type="radio" name="q5" value="0" required></td>
+                        <td><input type="radio" name="q5" value="1"></td>
+                        <td><input type="radio" name="q5" value="2"></td>
+                        <td><input type="radio" name="q5" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">6. Feeling bad about yourself or that you’re a failure<br>ඔබ ගැන නරක හැඟීමක් ඇතිවීම - නැතහොත් ඔබ අසාර්ථකයෙක් බවක් හැඟීම, ඔබ විසින් ඔබම හෝ ඔබේ පවුල අසාර්ථක කරවීමක් කළා යැයි සිතීම.</td>
+                        <td><input type="radio" name="q6" value="0" required></td>
+                        <td><input type="radio" name="q6" value="1"></td>
+                        <td><input type="radio" name="q6" value="2"></td>
+                        <td><input type="radio" name="q6" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">7. Trouble concentrating on things, such as reading<br>පුවත් පත කියවීම හෝ රූපවාහිනිය නරඹීම වැනි දේවල් වල අවධානය යොමු කිරීමට අපහසුව.</td>
+                        <td><input type="radio" name="q7" value="0" required></td>
+                        <td><input type="radio" name="q7" value="1"></td>
+                        <td><input type="radio" name="q7" value="2"></td>
+                        <td><input type="radio" name="q7" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">8. Moving or speaking so slowly that others have noticed<br>වෙනත් පුද්ගලයින්ට දැක ගත හැකි වන පරිදි සෙමින් චලනය වීම හෝ කතා කිරීම. නැතහොත්, (ප්‍රතිවිරුද්ධ දෙය) - ඔබ වෙනදාට වඩා බොහෝ සෙයින් එහා මෙහා යන තරමට චංචල හෝ නොසන්සුන්</td>
+                        <td><input type="radio" name="q8" value="0" required></td>
+                        <td><input type="radio" name="q8" value="1"></td>
+                        <td><input type="radio" name="q8" value="2"></td>
+                        <td><input type="radio" name="q8" value="3"></td>
+                    </tr>
+                    <tr>
+                        <td class="question">9. Thoughts that you would be better off dead or hurting yourself<br>ඔබ මිය යාම වඩා හොඳයි හෝ ඔබට කෙසේ හෝ ඔබව තුවාල කර ගත යුතුයැයි ඔබ සිතන සිතුවිලි</td>
+                        <td><input type="radio" name="q9" value="0" required></td>
+                        <td><input type="radio" name="q9" value="1"></td>
+                        <td><input type="radio" name="q9" value="2"></td>
+                        <td><input type="radio" name="q9" value="3"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-secondary">Clear</button>
+            </div>
+        </form>
+    </div> 
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
